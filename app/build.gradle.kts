@@ -12,14 +12,9 @@ android {
     defaultConfig {
         applicationId = logFoxPackageName
 
-        versionCode = providers
-            .environmentVariable("VERSION_CODE")
-            .orNull
-            ?.toIntOrNull()
-            ?: Int.MAX_VALUE
-        versionName = providers
-            .environmentVariable("VERSION_NAME")
-            .getOrElse("unknown")
+        versionCode = 80
+
+        versionName = "2.1.10"
     }
 
     buildFeatures {
