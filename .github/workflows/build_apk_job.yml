@@ -1,4 +1,10 @@
 on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - 'master'
+
   workflow_call:
     inputs:
       checkout_keystore:
