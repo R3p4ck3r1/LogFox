@@ -37,7 +37,13 @@ constructor(
         context.getString(Strings.error, e.localizedMessage)
     }
 
-    private fun createFormatter(format: String?) = SimpleDateFormat(format, Locale.getDefault())
+    private fun createFormatter(format: String?) = SimpleDateFormat(format, englishDigitsLocale)
+
+    private val englishDigitsLocale: Locale
+        get() = Locale.Builder()
+            .setLocale(Locale.getDefault())
+            .setUnicodeLocaleKeyword("nu", "latn")
+            .build()
 
     private val String.withReplacedBadSymbolsForFileName get() =
         replace(":", "-")
